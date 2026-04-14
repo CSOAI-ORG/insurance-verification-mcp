@@ -1,9 +1,79 @@
 {
   "name": "insurance-verification-mcp",
-  "description": "Insurance Verification MCP Server by MEOK AI Labs",
+  "description": "By **MEOK AI Labs** | https://meok.ai",
   "version": "1.0.0",
-  "author": "MEOK AI Labs",
-  "license": "MIT",
-  "repository": "https://github.com/CSOAI-ORG/insurance-verification-mcp",
-  "install": "pip install mcp && python server.py"
+  "tools": [
+    {
+      "name": "verify_eligibility",
+      "description": "",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "patient_id": {
+            "type": "string"
+          },
+          "policy_number": {
+            "type": "string"
+          },
+          "procedure_code": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "patient_id",
+          "policy_number",
+          "procedure_code"
+        ]
+      }
+    },
+    {
+      "name": "prior_authorization_check",
+      "description": "",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "diagnosis_code": {
+            "type": "string"
+          },
+          "treatment": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "diagnosis_code",
+          "treatment"
+        ]
+      }
+    },
+    {
+      "name": "claim_status",
+      "description": "",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "claim_id"
+        ]
+      }
+    },
+    {
+      "name": "fraud_indicators",
+      "description": "",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "claim_data": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "claim_data"
+        ]
+      }
+    }
+  ]
 }

@@ -1,9 +1,37 @@
-author: MEOK AI Labs
-description: Insurance Verification MCP Server
-license: MIT
 name: insurance-verification-mcp
-repository: https://github.com/CSOAI-ORG/insurance-verification-mcp
-tools:
-- description: See server.py
-  name: tool
+description: By **MEOK AI Labs** | https://meok.ai
 version: 1.0.0
+tools:
+- name: verify_eligibility
+  description: ''
+  parameters:
+  - name: patient_id
+    type: string
+    required: true
+  - name: policy_number
+    type: string
+    required: true
+  - name: procedure_code
+    type: string
+    required: true
+- name: prior_authorization_check
+  description: ''
+  parameters:
+  - name: diagnosis_code
+    type: string
+    required: true
+  - name: treatment
+    type: string
+    required: true
+- name: claim_status
+  description: ''
+  parameters:
+  - name: claim_id
+    type: string
+    required: true
+- name: fraud_indicators
+  description: ''
+  parameters:
+  - name: claim_data
+    type: object
+    required: true
