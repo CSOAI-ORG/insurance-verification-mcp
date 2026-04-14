@@ -1,0 +1,9 @@
+author: MEOK AI Labs
+description: Insurance Verification MCP Server
+license: MIT
+name: insurance-verification-mcp
+repository: https://github.com/CSOAI-ORG/insurance-verification-mcp
+tools:
+- description: See server.py
+  name: tool
+version: 1.0.0
