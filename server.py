@@ -7,19 +7,30 @@ sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
 from auth_middleware import check_access
 
 import json
+from datetime import datetime, timezone
+from collections import defaultdict
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("insurance-verification-mcp")
+mcp = FastMCP("insurance-verification", instructions="MEOK AI Labs MCP Server")
+
+FREE_DAILY_LIMIT = 15
+_usage = defaultdict(list)
+def _rl(c="anon"):
+    now = datetime.now(timezone.utc)
+    _usage[c] = [t for t in _usage[c] if (now-t).total_seconds() < 86400]
+    if len(_usage[c]) >= FREE_DAILY_LIMIT: return json.dumps({"error": f"Limit {FREE_DAILY_LIMIT}/day"})
+    _usage[c].append(now); return None
 
 
-@mcp.tool(name="verify_eligibility")
-async def verify_eligibility(
+@mcp.tool()
+def verify_eligibility(
     patient_id: str, policy_number: str, procedure_code: str, api_key: str = ""
 ) -> str:
     # Simulated verification
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+    if err := _rl(): return err
 
     return {
         "patient_id": patient_id,
@@ -30,13 +41,14 @@ async def verify_eligibility(
     }
 
 
-@mcp.tool(name="prior_authorization_check")
-async def prior_authorization_check(
+@mcp.tool()
+def prior_authorization_check(
     diagnosis_code: str, treatment: str, api_key: str = ""
 ) -> str:
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+    if err := _rl(): return err
 
     requires_auth = treatment.lower() in ["surgery", "mri", "specialist_visit"]
     return {
@@ -47,11 +59,12 @@ async def prior_authorization_check(
     }
 
 
-@mcp.tool(name="claim_status")
-async def claim_status(claim_id: str, api_key: str = "") -> str:
+@mcp.tool()
+def claim_status(claim_id: str, api_key: str = "") -> str:
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+    if err := _rl(): return err
 
     return {
         "claim_id": claim_id,
@@ -61,11 +74,12 @@ async def claim_status(claim_id: str, api_key: str = "") -> str:
     }
 
 
-@mcp.tool(name="fraud_indicators")
-async def fraud_indicators(claim_data: dict, api_key: str = "") -> str:
+@mcp.tool()
+def fraud_indicators(claim_data: dict, api_key: str = "") -> str:
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+    if err := _rl(): return err
 
     flags = []
     if claim_data.get("amount", 0) > 50000:
