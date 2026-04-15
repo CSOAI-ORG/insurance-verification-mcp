@@ -1,0 +1,52 @@
+{
+  "name": "insurance-verification",
+  "description": "MEOK AI Labs \u2014 Insurance eligibility verification, prior authorization, claims, and fraud detection.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/insurance-verification-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "verify_eligibility",
+      "description": "Verify patient insurance eligibility with coverage details, copay, deductible, and network status."
+    },
+    {
+      "name": "prior_authorization_check",
+      "description": "Check if a treatment requires prior authorization with estimated approval timeline and documentation needs."
+    },
+    {
+      "name": "claim_status",
+      "description": "Check insurance claim status with processing stage, payment details, and timeline."
+    },
+    {
+      "name": "fraud_indicators",
+      "description": "Analyze a claim for fraud indicators with risk scoring, pattern detection, and recommendations."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
