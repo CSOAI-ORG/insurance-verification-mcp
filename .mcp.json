@@ -1,6 +1,6 @@
 {
   "name": "insurance-verification-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 MEOK AI Labs MCP Server",
+  "description": "AI-powered insurance verification MCP server for agents. Supports verify eligibility, prior authorization check, claim status. By MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
