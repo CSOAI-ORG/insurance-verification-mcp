@@ -5,7 +5,7 @@
   "tools": [
     {
       "name": "verify_eligibility",
-      "description": "",
+      "description": "Verify patient insurance eligibility including coverage dates and plan details.",
       "parameters": {
         "type": "object",
         "properties": {
@@ -28,7 +28,7 @@
     },
     {
       "name": "prior_authorization_check",
-      "description": "",
+      "description": "Check if a medical procedure requires prior authorization from the insurer.",
       "parameters": {
         "type": "object",
         "properties": {
@@ -47,7 +47,7 @@
     },
     {
       "name": "claim_status",
-      "description": "",
+      "description": "Check the status of an insurance claim including processing stage and expected dates.",
       "parameters": {
         "type": "object",
         "properties": {
@@ -62,7 +62,7 @@
     },
     {
       "name": "fraud_indicators",
-      "description": "",
+      "description": "Analyze a claim for potential fraud indicators and risk scoring.",
       "parameters": {
         "type": "object",
         "properties": {

@@ -3,7 +3,8 @@ description: MEOK AI Labs MCP Server
 version: 1.0.0
 tools:
 - name: verify_eligibility
-  description: ''
+  description: Verify patient insurance eligibility including coverage dates and plan
+    details.
   parameters:
   - name: patient_id
     type: string
@@ -15,7 +16,8 @@ tools:
     type: string
     required: true
 - name: prior_authorization_check
-  description: ''
+  description: Check if a medical procedure requires prior authorization from the
+    insurer.
   parameters:
   - name: diagnosis_code
     type: string
@@ -24,13 +26,14 @@ tools:
     type: string
     required: true
 - name: claim_status
-  description: ''
+  description: Check the status of an insurance claim including processing stage and
+    expected dates.
   parameters:
   - name: claim_id
     type: string
     required: true
 - name: fraud_indicators
-  description: ''
+  description: Analyze a claim for potential fraud indicators and risk scoring.
   parameters:
   - name: claim_data
     type: object

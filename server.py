@@ -26,6 +26,7 @@ def _rl(c="anon"):
 def verify_eligibility(
     patient_id: str, policy_number: str, procedure_code: str, api_key: str = ""
 ) -> str:
+    """Verify patient insurance eligibility including coverage dates and plan details."""
     # Simulated verification
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -45,6 +46,7 @@ def verify_eligibility(
 def prior_authorization_check(
     diagnosis_code: str, treatment: str, api_key: str = ""
 ) -> str:
+    """Check if a medical procedure requires prior authorization from the insurer."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -61,6 +63,7 @@ def prior_authorization_check(
 
 @mcp.tool()
 def claim_status(claim_id: str, api_key: str = "") -> str:
+    """Check the status of an insurance claim including processing stage and expected dates."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -76,6 +79,7 @@ def claim_status(claim_id: str, api_key: str = "") -> str:
 
 @mcp.tool()
 def fraud_indicators(claim_data: dict, api_key: str = "") -> str:
+    """Analyze a claim for potential fraud indicators and risk scoring."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
