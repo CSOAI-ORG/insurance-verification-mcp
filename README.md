@@ -1,52 +1,38 @@
-# Insurance Verification
+<div align="center">
 
-> By [MEOK AI Labs](https://meok.ai) — Healthcare and general insurance automation
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/insurance-verification-mcp)](https://github.com/CSOAI-ORG/insurance-verification-mcp/stargazers)
+
+# uinsuranceU verificationU mcp
+
+****
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/insurance-verification-mcp)](https://www.npmjs.com/package/@meok-ai/insurance-verification-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/insurance-verification-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
 pip install insurance-verification-mcp
+# or
+npm install -g @meok-ai/insurance-verification-mcp
 ```
 
-## Usage
+## Quick Start
 
-```bash
-python server.py
-```
+See the project repository for full documentation and examples.
 
-## Tools
+## Enterprise Support
 
-### `verify_eligibility`
-Verify patient insurance eligibility including coverage dates and plan details.
-
-**Parameters:**
-- `patient_id` (str): Patient identifier
-- `policy_number` (str): Insurance policy number
-- `procedure_code` (str): Procedure code to check
-
-### `prior_authorization_check`
-Check if a medical procedure requires prior authorization from the insurer.
-
-**Parameters:**
-- `diagnosis_code` (str): Diagnosis code
-- `treatment` (str): Treatment type (e.g. surgery, mri, specialist_visit)
-
-### `claim_status`
-Check the status of an insurance claim including processing stage and expected dates.
-
-**Parameters:**
-- `claim_id` (str): Claim identifier
-
-### `fraud_indicators`
-Analyze a claim for potential fraud indicators and risk scoring.
-
-**Parameters:**
-- `claim_data` (dict): Claim data including amount, provider_history_months, etc.
-
-## Authentication
-
-Free tier: 15 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT — MEOK AI Labs
+MIT © [CSOAI](https://csoai.org)
