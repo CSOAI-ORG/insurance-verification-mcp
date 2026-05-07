@@ -88,6 +88,15 @@ def verify_eligibility(patient_id: str, policy_number: str, procedure_code: str,
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        patient_id (str): The patient id to analyze or process.
+        policy_number (str): The policy number to analyze or process.
+        procedure_code (str): The procedure code to analyze or process.
+        date_of_service (str): The date of service to analyze or process.
+        plan_type (str): The plan type to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -169,6 +178,15 @@ def prior_authorization_check(diagnosis_code: str, treatment: str, procedure_cod
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        diagnosis_code (str): The diagnosis code to analyze or process.
+        treatment (str): The treatment to analyze or process.
+        procedure_code (str): The procedure code to analyze or process.
+        urgency (str): The urgency to analyze or process.
+        patient_age (int): The patient age to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -254,6 +272,12 @@ def claim_status(claim_id: str, include_timeline: bool = True, api_key: str = ""
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        claim_id (str): The claim id to analyze or process.
+        include_timeline (bool): The include timeline to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -336,6 +360,11 @@ def fraud_indicators(claim_data: dict, api_key: str = "") -> str:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        claim_data (dict): The claim data to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
