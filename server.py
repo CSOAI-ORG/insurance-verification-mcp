@@ -72,7 +72,23 @@ FRAUD_INDICATORS_RULES = {
 def verify_eligibility(patient_id: str, policy_number: str, procedure_code: str,
                         date_of_service: str = "", plan_type: str = "PPO",
                         api_key: str = "") -> str:
-    """Verify patient insurance eligibility with coverage details, copay, deductible, and network status."""
+    """Verify patient insurance eligibility with coverage details, copay, deductible, and network status.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -123,7 +139,23 @@ def verify_eligibility(patient_id: str, policy_number: str, procedure_code: str,
 def prior_authorization_check(diagnosis_code: str, treatment: str, procedure_code: str = "",
                                 urgency: str = "routine", patient_age: int = 0,
                                 api_key: str = "") -> str:
-    """Check if a treatment requires prior authorization with estimated approval timeline and documentation needs."""
+    """Check if a treatment requires prior authorization with estimated approval timeline and documentation needs.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -178,7 +210,23 @@ def prior_authorization_check(diagnosis_code: str, treatment: str, procedure_cod
 
 @mcp.tool()
 def claim_status(claim_id: str, include_timeline: bool = True, api_key: str = "") -> str:
-    """Check insurance claim status with processing stage, payment details, and timeline."""
+    """Check insurance claim status with processing stage, payment details, and timeline.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -230,7 +278,23 @@ def claim_status(claim_id: str, include_timeline: bool = True, api_key: str = ""
 
 @mcp.tool()
 def fraud_indicators(claim_data: dict, api_key: str = "") -> str:
-    """Analyze a claim for fraud indicators with risk scoring, pattern detection, and recommendations."""
+    """Analyze a claim for fraud indicators with risk scoring, pattern detection, and recommendations.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
