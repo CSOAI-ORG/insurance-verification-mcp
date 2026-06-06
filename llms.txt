@@ -1,0 +1,33 @@
+# insurance-verification-mcp
+# **MCP server for insurance verification mcp operations**
+
+## Install
+```bash
+pip install insurance-verification-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `verify_eligibility`
+Verify patient insurance eligibility with coverage details, copay, deductible, and network status.
+
+### `prior_authorization_check`
+Check if a treatment requires prior authorization with estimated approval timeline and documentation needs.
+
+### `claim_status`
+Check insurance claim status with processing stage, payment details, and timeline.
+
+### `fraud_indicators`
+Analyze a claim for fraud indicators with risk scoring, pattern detection, and recommendations.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

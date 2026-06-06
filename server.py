@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Insurance Verification MCP Server — Healthcare and general insurance automation."""
+"""
+Insurance Verification MCP Server — Healthcare and general insurance automation."""
 
 import sys, os
-sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
 from auth_middleware import check_access
 
 import json, hashlib, time
@@ -114,7 +114,7 @@ def verify_eligibility(patient_id: str, policy_number: str, procedure_code: str,
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     plan = PLAN_TYPES.get(plan_type.upper(), PLAN_TYPES["PPO"])
@@ -204,7 +204,7 @@ def prior_authorization_check(diagnosis_code: str, treatment: str, procedure_cod
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     treatment_lower = treatment.lower().replace(" ", "_")
@@ -295,7 +295,7 @@ def claim_status(claim_id: str, include_timeline: bool = True, api_key: str = ""
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     stored = _CLAIMS.get(claim_id)
@@ -382,7 +382,7 @@ def fraud_indicators(claim_data: dict, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     flags = []
@@ -470,5 +470,8 @@ def fraud_indicators(claim_data: dict, api_key: str = "") -> str:
     }
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()

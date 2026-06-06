@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "insurance-verification-mcp"
-version = "1.0.4"
+version = "1.0.6"
 readme = "README.md"
 description = "AI-powered insurance verification MCP server for agents. Supports verify eligibility, prior authorization check, claim status. By MEOK AI Labs."
 license = {file = "LICENSE"}
@@ -22,7 +22,7 @@ Homepage = "https://meok.ai"
 Repository = "https://github.com/CSOAI-ORG/insurance-verification-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-only-include = ["server.py"]
+only-include = ["server.py", "auth_middleware.py"]
 
 [project.scripts]
 insurance_verification_mcp = "server:main"

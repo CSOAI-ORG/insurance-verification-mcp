@@ -1,0 +1,25 @@
+{
+  "name": "insurance-verification-mcp",
+  "title": "Insurance Verification Mcp",
+  "description": "AI-powered insurance verification MCP server for agents. Supports verify eligibility, prior authorization check, claim status. By MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "verify_eligibility"
+    },
+    {
+      "name": "prior_authorization_check"
+    },
+    {
+      "name": "claim_status"
+    },
+    {
+      "name": "fraud_indicators"
+    }
+  ]
+}

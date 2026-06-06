@@ -1,0 +1,9 @@
+# insurance-verification-mcp - Auto-trigger Rules
+
+When the user asks about insurance verification, use insurance-verification-mcp tools: verify_eligibility, prior_authorization_check, claim_status, fraud_indicators
+
+**MCP server for insurance verification mcp operations**
+
+Install: `pip install insurance-verification-mcp`
+
+By MEOK AI Labs — MIT licensed.
