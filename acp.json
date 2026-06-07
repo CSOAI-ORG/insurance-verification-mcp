@@ -1,0 +1,22 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "insurance-verification-mcp",
+    "description": "Insurance Verification MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "insurance-verification-mcp"
+      }
+    ],
+    "capabilities": [
+      "verify_eligibility",
+      "prior_authorization_check",
+      "claim_status",
+      "fraud_indicators"
+    ]
+  }
+}

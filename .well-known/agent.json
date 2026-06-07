@@ -1,0 +1,59 @@
+{
+  "name": "insurance-verification-mcp",
+  "description": "Insurance Verification MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/insurance-verification-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "verify_eligibility",
+      "name": "Verify Eligibility",
+      "description": "verify_eligibility via insurance-verification-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "prior_authorization_check",
+      "name": "Prior Authorization Check",
+      "description": "prior_authorization_check via insurance-verification-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "claim_status",
+      "name": "Claim Status",
+      "description": "claim_status via insurance-verification-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "fraud_indicators",
+      "name": "Fraud Indicators",
+      "description": "fraud_indicators via insurance-verification-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
