@@ -4,9 +4,8 @@
   "version": "1.0.9",
   "description": "Insurance Verification MCP Server by MEOK AI Labs",
   "repository": {
-    "type": "git",
     "url": "https://github.com/CSOAI-ORG/insurance-verification-mcp",
-    "source": "https://github.com/CSOAI-ORG/insurance-verification-mcp"
+    "source": "github"
   },
   "packages": [
     {
