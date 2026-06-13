@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.CSOAI-ORG/insurance-verification-mcp",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Insurance Verification MCP Server by MEOK AI Labs",
   "repository": {
     "type": "git",
@@ -12,7 +12,7 @@
     {
       "registryType": "pypi",
       "identifier": "insurance-verification-mcp",
-      "version": "1.0.8",
+      "version": "1.0.9",
       "runtimeHint": "python",
       "transport": {
         "type": "stdio"
