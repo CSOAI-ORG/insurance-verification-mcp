@@ -1,4 +1,4 @@
-<!-- mcp-name: CSOAI-ORG/insurance-verification-mcp -->
+<!-- mcp-name: io.github.CSOAI-ORG/insurance-verification-mcp -->
 [![MCP Scorecard: 86/100](https://img.shields.io/badge/proofof.ai-86%2F100-5b21b6)](https://proofof.ai/scorecard/insurance-verification-mcp.html)
 
 # Insurance Verification MCP
